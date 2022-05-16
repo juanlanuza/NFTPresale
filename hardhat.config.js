@@ -1,7 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 
-const { privateKey, APIBscScan} = require('./secrets.json');
+const { privateKey, APIBscScan } = require("./secrets.json");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -19,14 +19,13 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
- module.exports = {
+module.exports = {
   defaultNetwork: "localhost",
   networks: {
     localhost: {
-      url: "http://127.0.0.1:8545"
+      url: "http://127.0.0.1:8545",
     },
-    hardhat: {
-    },
+    hardhat: {},
     // testnet: {
     //   url: "https://data-seed-prebsc-1-s1.binance.org:8545",
     //   chainId: 97,
@@ -45,12 +44,12 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     compilers: [
       {
         version: "0.8.13",
-      }
-    ],   
+      },
+    ],
   },
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: APIBscScan
-  }
+    apiKey: APIBscScan,
+  },
 };
